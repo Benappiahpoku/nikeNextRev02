@@ -2,32 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --darkGreen: rgba(10, 63, 73, 0.9); /* Adjust the alpha value (0.7) to reduce the opacity */
+    --middleGreen: #436568;
+  --lightGreen: rgba(17, 178, 189, 1); /* Adjust the alpha value (0.3) to make it lighter */
+  --gradient-background:linear-gradient(to left, var(--darkGreen) 0%, var(--lightGreen) 100%);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Barlow', sans-serif;
+  background:var(--gradient-background);
+color:white;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.hero-title {
+  background:linear-gradient(to right, var(--middleGreen) 0% , var(--darkGreen) 100% )
 }
